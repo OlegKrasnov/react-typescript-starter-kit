@@ -1,0 +1,21 @@
+@import 'src/assets/styles/mixins';
+@import 'src/assets/styles/variables';
+
+a {
+  border-bottom: 1px solid;
+  text-decoration: none;
+
+  @include link-color($link);
+}
+
+.pseudo {
+  border-bottom: 1px dotted;
+  cursor: pointer;
+}
+
+a,
+.pseudo {
+  &:hover {
+    @include link-color($link-hover);
+  }
+}

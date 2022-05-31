@@ -1,0 +1,25 @@
+/**
+  @param {color} hexOrName
+  @param {boolean=} important
+*/
+
+@mixin link-color($hexOrName, $important: false) {
+  border-color: maybe-important(rgba($hexOrName, 0.3), $important);
+  color: maybe-important($hexOrName, $important);
+}
+
+/**
+  @param {string} value
+  @param {boolean=} important
+  @return {string}
+*/
+
+@function maybe-important($value, $important: false) {
+  @if $important {
+    @return unquote($value + ' !important');
+  }
+
+  @else {
+    @return unquote($value + '');
+  }
+}
