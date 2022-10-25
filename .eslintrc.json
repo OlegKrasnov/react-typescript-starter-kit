@@ -151,7 +151,7 @@
     "object-curly-spacing": ["error", "always"],
     "object-shorthand": ["error", "always"],
     "operator-assignment": ["error", "always"],
-    "operator-linebreak": ["error", "after"],
+    "operator-linebreak": ["error", "before"],
     "prefer-arrow-callback": ["error"],
     "prefer-const": ["error"],
     "prefer-numeric-literals": ["error"],
