@@ -26,6 +26,7 @@
         "use"
       ]
     }],
+    "color-hex-case": "lower",
     "declaration-colon-space-after": "always",
     "declaration-colon-space-before": "never",
     "indentation": 2,
