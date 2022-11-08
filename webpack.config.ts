@@ -90,6 +90,9 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
                 modules: {
                   localIdentName: isDev ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:8]'
                 },
+                postcssOptions: {
+                  plugins: ['postcss-media-minmax']
+                },
                 sourceMap: isDev
               }
             },
