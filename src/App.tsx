@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { Page } from './components/Page'
+import React, { FC } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Page } from './components/Page';
 import { useBrowserDetect } from './hooks';
 
 const App: FC = () => {
@@ -12,7 +12,7 @@ const App: FC = () => {
         <Page />
       </main>
     </Router>
-  )
-}
+  );
+};
 
-export { App }
+export { App };

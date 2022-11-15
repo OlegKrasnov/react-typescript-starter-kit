@@ -1,25 +1,25 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 const useEventListener = (eventName: string, handler: any, element = window) => {
-  const savedHandler = useRef<EventListener>()
+  const savedHandler = useRef<EventListener>();
 
   useEffect(() => {
-    savedHandler.current = handler
-  }, [handler])
+    savedHandler.current = handler;
+  }, [handler]);
 
   useEffect(() => {
-    const isSupported = element && element.addEventListener
+    const isSupported = element && element.addEventListener;
     if (!isSupported) {
-      return
+      return;
     }
 
-    const eventListener = (event: Event) => savedHandler.current?.(event)
-    element.addEventListener(eventName, eventListener)
+    const eventListener = (event: Event) => savedHandler.current?.(event);
+    element.addEventListener(eventName, eventListener);
 
     return () => {
-      element.removeEventListener(eventName, eventListener)
-    }
-  }, [eventName, element])
-}
+      element.removeEventListener(eventName, eventListener);
+    };
+  }, [eventName, element]);
+};
 
-export { useEventListener }
+export { useEventListener };

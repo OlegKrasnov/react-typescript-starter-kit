@@ -1,20 +1,20 @@
-const CopyPlugin = require('copy-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const StylelintPlugin = require('stylelint-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const path = require('path');
 
 interface Environment {
-  prod: boolean
+  prod: boolean;
 }
 
 module.exports = (env: Environment, argv: Record<string, any>) => {
-  const isProd = argv.mode === 'production'
-  const isDev = !isProd
+  const isProd = argv.mode === 'production';
+  const isDev = !isProd;
 
-  const filename = (ext: string) => (isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`)
+  const filename = (ext: string) => (isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`);
 
   const plugins = () => {
     const base = [
@@ -32,20 +32,20 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
       new MiniCssExtractPlugin({
         filename: filename('css')
       })
-    ]
+    ];
 
     if (isDev) {
-      base.push(new ESLintPlugin())
+      base.push(new ESLintPlugin());
       base.push(
         new StylelintPlugin({
           configFile: '.stylelintrc.json',
           fix: true
         })
-      )
+      );
     }
 
-    return base
-  }
+    return base;
+  };
 
   return {
     target: 'web',
@@ -126,5 +126,5 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
         }
       ]
     }
-  }
-}
+  };
+};

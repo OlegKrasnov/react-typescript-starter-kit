@@ -1,2 +1,2 @@
-export * from './useBrowserDetect'
-export * from './useEventListener'
+export * from './useBrowserDetect';
+export * from './useEventListener';

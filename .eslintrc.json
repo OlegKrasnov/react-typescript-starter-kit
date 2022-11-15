@@ -159,7 +159,7 @@
     "prefer-spread": ["error"],
     "quotes": ["error", "single"],
     "rest-spread-spacing": ["error", "never"],
-    "semi": ["error", "never"],
+    "semi": ["error", "always"],
     "semi-spacing": [
       "error",
       {
