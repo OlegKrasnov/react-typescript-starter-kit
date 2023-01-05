@@ -1,3 +1,19 @@
+@use 'variables/colors';
+
+@mixin center-template {
+  align-items: center;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  min-height: calc(100vh - 1rem * 2);
+
+  &_dark-theme {
+    background: colors.$tory-blue;
+    margin: -1rem;
+    padding: 1rem;
+  }
+}
+
 /**
   @param {color} hexOrName
   @param {boolean=} important
@@ -17,9 +33,7 @@
 @function maybe-important($value, $important: false) {
   @if $important {
     @return unquote($value + ' !important');
-  }
-
-  @else {
+  } @else {
     @return unquote($value + '');
   }
 }
