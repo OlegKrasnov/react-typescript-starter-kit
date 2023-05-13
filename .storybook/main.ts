@@ -5,9 +5,11 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/preset-scss'
   ],
-  core: {
-    builder: 'webpack5'
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {
+      fastRefresh: true
+    }
   },
-  framework: '@storybook/react',
   stories: ['../src/**/*.stories.tsx']
 };

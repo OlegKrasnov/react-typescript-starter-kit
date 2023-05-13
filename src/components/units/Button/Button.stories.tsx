@@ -1,6 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/named
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import classNames from 'classnames';
 import {
   ButtonInterface,
@@ -9,44 +7,39 @@ import {
   ButtonWidthType,
   ComponentPropsInterface
 } from '../../../interfaces';
-import { Button as ButtonComponent } from './Button';
+import { Button } from './Button';
 
 const templateClassName = 'template';
 
 export default {
   title: 'Elements/Button',
-  component: ButtonComponent,
+  component: Button,
+  args: {
+    title: 'Button',
+    label: '2.0',
+    size: ButtonSizeType.medium,
+    type: ButtonType.primary,
+    width: ButtonWidthType.hug,
+    disabled: false,
+    outline: false,
+    isDarkTheme: false
+  },
   argTypes: {
     className: {
       table: {
         disable: true
       }
     },
-    disabled: {
-      control: 'boolean',
-      defaultValue: false
-    },
     isDarkTheme: {
-      control: 'boolean',
-      defaultValue: false,
       name: 'Тёмная тема'
-    },
-    label: {
-      control: 'text',
-      defaultValue: '2.0'
     },
     onClick: {
       table: {
         disable: true
       }
     },
-    outline: {
-      control: 'boolean',
-      defaultValue: false
-    },
     size: {
-      control: 'radio',
-      defaultValue: ButtonSizeType.medium,
+      control: { type: 'radio' },
       options: [ButtonSizeType.large, ButtonSizeType.medium]
     },
     submit: {
@@ -54,37 +47,26 @@ export default {
         disable: true
       }
     },
-    title: {
-      control: 'text',
-      defaultValue: 'Button'
-    },
     to: {
       table: {
         disable: true
       }
     },
     type: {
-      control: 'radio',
-      defaultValue: ButtonType.primary,
       options: [ButtonType.primary]
     },
     width: {
-      control: 'radio',
-      defaultValue: ButtonWidthType.hug,
       options: [ButtonWidthType.fill, ButtonWidthType.hug]
     }
   }
-} as ComponentMeta<typeof ButtonComponent>;
+};
 
-const Template: ComponentStory<typeof ButtonComponent> = (args: ButtonInterface & ComponentPropsInterface) => (
+export const button = (args: ButtonInterface & ComponentPropsInterface) => (
   <div
     className={classNames(templateClassName, {
       [`${templateClassName}_dark-theme`]: args.isDarkTheme
     })}
   >
-    <ButtonComponent {...args} />
+    <Button {...args} />
   </div>
 );
-
-export const button = Template.bind({});
-button.args = {};
