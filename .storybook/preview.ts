@@ -4,7 +4,8 @@ import './style.stories.scss';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' }
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    layout: 'fullscreen'
   }
 };
 export default preview;
