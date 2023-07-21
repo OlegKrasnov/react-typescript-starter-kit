@@ -106,10 +106,7 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
         },
         {
           test: /\.(jpe?g|png|ttf|svg|mp3)$/i,
-          loader: 'file-loader',
-          options: {
-            outputPath: 'assets'
-          }
+          type: 'asset/resource'
         },
         {
           test: /\.tsx?$/,
