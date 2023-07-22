@@ -54,6 +54,7 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
       app: './index.tsx'
     },
     output: {
+      assetModuleFilename: 'asset/[hash][ext][query]',
       clean: true,
       path: path.resolve(__dirname, 'dist'),
       filename: filename('js')
