@@ -6,7 +6,7 @@
   "private": "true",
   "scripts": {
     "build": "webpack --mode=production",
-    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint": "eslint --cache \"src/**/*.{ts,tsx}\"",
     "prepare": "husky install",
     "prettier": "prettier src/**/*.{ts,tsx} --check",
     "start": "webpack serve --mode=development",
