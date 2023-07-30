@@ -6,11 +6,12 @@
   "private": "true",
   "scripts": {
     "build": "webpack --mode=production",
-    "lint": "eslint --cache \"src/**/*.{ts,tsx}\"",
+    "lint": "eslint --cache \"src/**/*.{ts,tsx}\" --cache-location \"./node_modules/@eslint/.eslintcache/\"",
     "prepare": "husky install",
     "prettier": "prettier src/**/*.{ts,tsx} --check",
     "start": "webpack serve --mode=development",
     "storybook": "storybook dev -p 6006 -s ./public",
+    "stylelint": "stylelint \"src/**/*.scss\"",
     "build-storybook": "storybook build"
   },
   "keywords": [
