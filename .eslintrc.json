@@ -119,7 +119,7 @@
         "allowParens": true
       }
     ],
-    "no-console": ["off"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-constant-condition": [
       "error",
       {
