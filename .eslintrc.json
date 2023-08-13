@@ -158,6 +158,7 @@
     "prefer-rest-params": ["error"],
     "prefer-spread": ["error"],
     "quotes": ["error", "single"],
+    "react/jsx-sort-props": ["error", { "reservedFirst": ["key", "ref"] }],
     "rest-spread-spacing": ["error", "never"],
     "semi": ["error", "always"],
     "semi-spacing": [
