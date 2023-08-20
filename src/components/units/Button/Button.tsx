@@ -39,12 +39,12 @@ const Button: FC<ButtonInterface & ComponentPropsInterface> = ({
   ]);
 
   return to ? (
-    <Link className={componentClassName} to={to} onClick={onClick}>
+    <Link className={componentClassName} onClick={onClick} to={to}>
       {title}
       {label && <span>{label}</span>}
     </Link>
   ) : (
-    <button className={componentClassName} disabled={disabled} type={submit ? 'submit' : 'button'} onClick={onClick}>
+    <button className={componentClassName} disabled={disabled} onClick={onClick} type={submit ? 'submit' : 'button'}>
       {title}
       {label && <span>{label}</span>}
     </button>

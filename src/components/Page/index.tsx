@@ -9,8 +9,8 @@ const pageClassName = 'page';
 const Page: FC = () => (
   <div className={pageStyles[pageClassName]}>
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="*" element={<NotFoundPage />} />
+      <Route element={<HomePage />} path="/" />
+      <Route element={<NotFoundPage />} path="*" />
     </Routes>
   </div>
 );

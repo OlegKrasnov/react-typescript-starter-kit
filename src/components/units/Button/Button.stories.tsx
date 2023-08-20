@@ -12,17 +12,15 @@ import { Button } from './Button';
 const templateClassName = 'template';
 
 export default {
-  title: 'Elements/Button',
-  component: Button,
   args: {
-    title: 'Button',
-    label: '2.0',
-    size: ButtonSizeType.medium,
-    type: ButtonType.primary,
-    width: ButtonWidthType.hug,
     disabled: false,
+    isDarkTheme: false,
+    label: '2.0',
     outline: false,
-    isDarkTheme: false
+    size: ButtonSizeType.medium,
+    title: 'Button',
+    type: ButtonType.primary,
+    width: ButtonWidthType.hug
   },
   argTypes: {
     className: {
@@ -58,7 +56,9 @@ export default {
     width: {
       options: [ButtonWidthType.fill, ButtonWidthType.hug]
     }
-  }
+  },
+  component: Button,
+  title: 'Elements/Button'
 };
 
 export const button = (args: ButtonInterface & ComponentPropsInterface) => (
