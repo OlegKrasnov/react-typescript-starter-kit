@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './Home';
 import { NotFoundPage } from './NotFoundPage';
@@ -6,7 +6,7 @@ import pageStyles from './style.module.scss';
 
 const pageClassName = 'page';
 
-const Page: FC = () => (
+const Page = () => (
   <div className={pageStyles[pageClassName]}>
     <Routes>
       <Route element={<HomePage />} path="/" />

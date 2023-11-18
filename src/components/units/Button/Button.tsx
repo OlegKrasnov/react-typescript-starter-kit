@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import {
@@ -12,7 +12,7 @@ import buttonStyles from './Button.module.scss';
 
 const buttonClassName = 'button';
 
-const Button: FC<ButtonInterface & ComponentPropsInterface> = ({
+const Button = ({
   className,
   disabled = false,
   isDarkTheme = false,
@@ -25,7 +25,7 @@ const Button: FC<ButtonInterface & ComponentPropsInterface> = ({
   submit,
   type = ButtonType.primary,
   width = ButtonWidthType.hug
-}) => {
+}: ButtonInterface & ComponentPropsInterface) => {
   const componentClassName = classNames([
     buttonStyles[buttonClassName],
     {
