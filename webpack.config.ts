@@ -22,16 +22,16 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
         patterns: [
           {
             from: path.resolve(__dirname, 'src/assets/media'),
-            to: path.resolve(__dirname, 'dist/media')
-          }
-        ]
+            to: path.resolve(__dirname, 'dist/media'),
+          },
+        ],
       }),
       new HtmlWebpackPlugin({
-        template: './index.html'
+        template: './index.html',
       }),
       new MiniCssExtractPlugin({
-        filename: filename('css')
-      })
+        filename: filename('css'),
+      }),
     ];
 
     if (isDev) {
@@ -39,8 +39,8 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
       base.push(
         new StylelintPlugin({
           configFile: '.stylelintrc.json',
-          fix: true
-        })
+          fix: true,
+        }),
       );
     }
 
@@ -48,37 +48,16 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
   };
 
   return {
-    target: 'web',
     context: path.resolve(__dirname, 'src'),
-    entry: {
-      app: './index.tsx'
-    },
-    output: {
-      assetModuleFilename: 'asset/[hash][ext][query]',
-      clean: true,
-      path: path.resolve(__dirname, 'dist'),
-      filename: filename('js')
-    },
     devServer: {
       historyApiFallback: true,
       open: true,
-      port: 3000
+      port: 3000,
     },
     devtool: isDev ? 'source-map' : false,
-    resolve: {
-      extensions: ['.js', '.ts', '.tsx'],
-      alias: {
-        '@': path.resolve(__dirname, 'src')
-      }
+    entry: {
+      app: './index.tsx',
     },
-    optimization: {
-      minimizer: [
-        new TerserPlugin({
-          extractComments: false
-        })
-      ]
-    },
-    plugins: plugins(),
     module: {
       rules: [
         {
@@ -89,40 +68,61 @@ module.exports = (env: Environment, argv: Record<string, any>) => {
               loader: 'css-loader',
               options: {
                 modules: {
-                  localIdentName: isDev ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:8]'
+                  localIdentName: isDev ? '[name]__[local]___[hash:base64:5]' : '[hash:base64:8]',
                 },
-                sourceMap: isDev
-              }
+                sourceMap: isDev,
+              },
             },
             {
               loader: 'postcss-loader',
               options: {
                 postcssOptions: {
-                  plugins: ['postcss-media-minmax']
-                }
-              }
+                  plugins: ['postcss-media-minmax'],
+                },
+              },
             },
-            'sass-loader'
-          ]
+            'sass-loader',
+          ],
         },
         {
           test: /\.(jpe?g|png|ttf|svg|mp3)$/i,
-          type: 'asset/resource'
+          type: 'asset/resource',
         },
         {
-          test: /\.tsx?$/,
           exclude: /node_modules/,
+          test: /\.tsx?$/,
           use: [
             {
               loader: 'babel-loader',
               options: {
-                presets: ['@babel/preset-env']
-              }
+                presets: ['@babel/preset-env'],
+              },
             },
-            'ts-loader'
-          ]
-        }
-      ]
-    }
+            'ts-loader',
+          ],
+        },
+      ],
+    },
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          extractComments: false,
+        }),
+      ],
+    },
+    output: {
+      assetModuleFilename: 'asset/[hash][ext][query]',
+      clean: true,
+      filename: filename('js'),
+      path: path.resolve(__dirname, 'dist'),
+    },
+    plugins: plugins(),
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+      extensions: ['.js', '.ts', '.tsx'],
+    },
+    target: 'web',
   };
 };

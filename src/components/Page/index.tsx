@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './Home';
 import { NotFoundPage } from './NotFoundPage';
-import pageStyles from './style.module.scss';
+import * as pageStyles from './style.module.scss';
 
 const pageClassName = 'page';
 

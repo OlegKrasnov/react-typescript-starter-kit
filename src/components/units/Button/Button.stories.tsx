@@ -5,7 +5,7 @@ import {
   ButtonSizeType,
   ButtonType,
   ButtonWidthType,
-  ComponentPropsInterface
+  ComponentPropsInterface,
 } from '../../../interfaces';
 import { Button } from './Button';
 
@@ -20,51 +20,51 @@ export default {
     size: ButtonSizeType.medium,
     title: 'Button',
     type: ButtonType.primary,
-    width: ButtonWidthType.hug
+    width: ButtonWidthType.hug,
   },
   argTypes: {
     className: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     isDarkTheme: {
-      name: 'Тёмная тема'
+      name: 'Тёмная тема',
     },
     onClick: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     size: {
       control: { type: 'radio' },
-      options: [ButtonSizeType.large, ButtonSizeType.medium]
+      options: [ButtonSizeType.large, ButtonSizeType.medium],
     },
     submit: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     to: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     type: {
-      options: [ButtonType.primary]
+      options: [ButtonType.primary],
     },
     width: {
-      options: [ButtonWidthType.fill, ButtonWidthType.hug]
-    }
+      options: [ButtonWidthType.fill, ButtonWidthType.hug],
+    },
   },
   component: Button,
-  title: 'Elements/Button'
+  title: 'Elements/Button',
 };
 
 export const button = (args: ButtonInterface & ComponentPropsInterface) => (
   <div
     className={classNames(templateClassName, {
-      [`${templateClassName}_dark-theme`]: args.isDarkTheme
+      [`${templateClassName}_dark-theme`]: args.isDarkTheme,
     })}
   >
     <Button {...args} />

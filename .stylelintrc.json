@@ -28,14 +28,6 @@
         "use"
       ]
     }],
-    "color-hex-case": "lower",
-    "declaration-colon-space-after": "always",
-    "declaration-colon-space-before": "never",
-    "indentation": 2,
-    "media-feature-colon-space-after": "always",
-    "media-feature-colon-space-before": "never",
-    "media-feature-range-operator-space-after": "always",
-    "media-feature-range-operator-space-before": "never",
     "no-descending-specificity": null,
     "order/order": [
       "custom-properties",
@@ -44,7 +36,13 @@
       "rules"
     ],
     "order/properties-alphabetical-order": true,
+    "scss/no-global-function-names": true,
     "selector-class-pattern": "(.)+",
-    "string-quotes": "single"
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
   }
 }

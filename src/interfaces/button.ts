@@ -1,16 +1,16 @@
 export enum ButtonSizeType {
   large = 'large',
-  medium = 'medium'
+  medium = 'medium',
 }
 
 export enum ButtonType {
   primary = 'primary',
-  secondary = 'secondary'
+  secondary = 'secondary',
 }
 
 export enum ButtonWidthType {
   fill = 'fill',
-  hug = 'hug'
+  hug = 'hug',
 }
 
 export interface ButtonInterface {

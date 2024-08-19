@@ -6,9 +6,9 @@ import {
   ButtonSizeType,
   ButtonType,
   ButtonWidthType,
-  ComponentPropsInterface
+  ComponentPropsInterface,
 } from '../../../interfaces';
-import buttonStyles from './Button.module.scss';
+import * as buttonStyles from './Button.module.scss';
 
 const buttonClassName = 'button';
 
@@ -24,7 +24,7 @@ const Button = ({
   to,
   submit,
   type = ButtonType.primary,
-  width = ButtonWidthType.hug
+  width = ButtonWidthType.hug,
 }: ButtonInterface & ComponentPropsInterface) => {
   const componentClassName = classNames([
     buttonStyles[buttonClassName],
@@ -33,9 +33,9 @@ const Button = ({
       [buttonStyles[`${buttonClassName}_outline`]]: outline,
       [buttonStyles[`${buttonClassName}_${size}`]]: size,
       [buttonStyles[`${buttonClassName}_${type}`]]: type,
-      [buttonStyles[`${buttonClassName}_${width}`]]: width
+      [buttonStyles[`${buttonClassName}_${width}`]]: width,
     },
-    className
+    className,
   ]);
 
   return to ? (
