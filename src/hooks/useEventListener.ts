@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 const useEventListener = (eventName: string, handler: any, element = window) => {
-  const savedHandler = useRef<EventListener>();
+  const savedHandler = useRef<EventListener>(null);
 
   useEffect(() => {
     savedHandler.current = handler;

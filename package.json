@@ -95,13 +95,13 @@
   },
   "dependencies": {
     "@types/node": "^20.14.11",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "19.0.4",
+    "@types/react-dom": "19.0.2",
     "ajv": "^8.17.1",
     "postcss-media-minmax": "^5.0.0",
-    "react": "^18.3.1",
+    "react": "19.0.0",
     "react-device-detect": "^2.2.3",
-    "react-dom": "^18.3.1",
+    "react-dom": "19.0.0",
     "react-router-dom": "^6.25.1"
   }
 }
